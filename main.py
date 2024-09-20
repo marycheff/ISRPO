@@ -12,6 +12,17 @@ def check_same_sign(arr):
             return False
     return True
 
+def process_arrays(arrays):
+    found = False
+    i = 1
+    for arr in arrays:
+        if check_same_sign(arr):
+            print(f"Массив {i} состоит из элементов одного знака.")
+            found = True
+        i += 1
+    if not found:
+        print("Нет массивов, состоящих из элементов одного знака.")
+
 arrays = [
     [1.2, 3.4, 5.6, 7.8],
     [-1.1, -2.2, -3.3],
@@ -20,13 +31,4 @@ arrays = [
     [-7.7, -8.8, -9.9]
 ]
 
-found = False
-i = 1
-for arr in arrays:
-    if check_same_sign(arr):
-        print(f"Массив {i} состоит из элементов одного знака.")
-        found = True
-    i += 1
-
-if not found:
-    print("Нет массивов, состоящих из элементов одного знака.")
+process_arrays(arrays)
